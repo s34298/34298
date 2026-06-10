@@ -2,45 +2,359 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟมสะสมงานของฉัน ้ </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
 <style>
 
-    body
-        { font-family: sans-serif; background-color: #f6e8b6; text-align: center;
-padding: 30px; }
+/* ====================================
+    พื้นหลัง
+==================================== */
 
-    .container { max-width: 800px; margin: 0 auto; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
+body{
+    font-family: Arial, sans-serif;
 
-    .btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    background-image:url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHYycTNxcGx0aXloZ3d0Z2tvanM3dnRrcmRxN2F1NnV5ODBpMjlqYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTcnT45z6H5gxFYZZS/giphy.gif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+/* ====================================
+    Container
+==================================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+/* ====================================
+    Glass Card
+==================================== */
+
+.glass{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+
+    padding:30px;
+    margin-bottom:30px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+/* ====================================
+    Header
+==================================== */
+
+.profile{
+    text-align:center;
+}
+
+.profile img{
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid rgba(255,255,255,0.7);
+
+    margin-bottom:20px;
+}
+
+.profile h1{
+    margin-bottom:10px;
+}
+
+.profile p{
+    opacity:0.9;
+}
+
+/* ====================================
+    Section Title
+==================================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+/* ====================================
+    About Me
+==================================== */
+
+.about p{
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+/* ====================================
+    Skills
+==================================== */
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-name{
+    margin-bottom:8px;
+}
+
+.skill-bar{
+    width:100%;
+    height:20px;
+
+    background:rgba(255,255,255,0.2);
+
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        #00b4ff,
+        #0066ff
+    );
+}
+
+/* ====================================
+    Portfolio Gallery
+==================================== */
+
+.gallery{
+    display:flex;
+    gap:20px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    padding:10px 5px;
+
+    scroll-behavior:smooth;
+}
+
+.gallery::-webkit-scrollbar{
+    height:10px;
+}
+
+.gallery::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:rgba(0,180,255,0.7);
+    border-radius:20px;
+}
+
+.project{
+    min-width:300px;
+    flex-shrink:0;
+}
+
+
+.project{
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    overflow:hidden;
+
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+}
+
+.project img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:15px;
+}
+
+/* ====================================
+    Contact
+==================================== */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* ====================================
+    ปุ่มกลับหน้าแรก
+==================================== */
+
+.btn{
+    display:inline-block;
+
+    margin-top:20px;
+    padding:12px 25px;
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #00b4ff,
+        #0066ff
+    );
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
 
 </style>
 </head>
 <body>
+
 <div class="container">
 
-<h1> แฟมสะสมงาน ้ (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
+    <!-- ==========================
+        PROFILE สุดกาก
+    =========================== -->
 
-<!-- กล่องผลงานชนที่ ้ิ 1 -->
+    <div class="glass profile">
 
-<div class="project-card">
-<h3>1. โครงงาน/ชนงานวิทยาศาสตร์ค;านวณ ิ้ </h3>
-<p>รายละเอียดชนงาน ิ้ : เขียนอธิบายสันๆ ว่าท;าอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง ้ </p>
-</div>
+        <img src="student.jpg" alt="Profile">
 
-<!-- กล่องผลงานชนที่ ้ิ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชนงาน ิ้ : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
-</div>
+        <h1>โชคอนันต์ แสงพา</h1>
 
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn"> กลับหน้าแรก</a>
+        <p>MSEP15 STUDENT</p>
+
+        <p>
+            "ทำวันนี้ให้ดีที่สุด แล้ววันอื่นผมจะทำอะไร"
+        </p>
+
+    </div>
+
+    <!-- ==========================
+        ABOUT ME นะจ๊ะ
+    =========================== -->
+
+    <div class="glass about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p>• อายุ : 17 ปี</p>
+
+        <p>• กำลังศึกษาอยู่ที่ : โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์</p>
+
+        <p>• ความสนใจ : Architecture / Design</p>
+
+        <p>• งานอดิเรก : Modeling 3D</p>
+
+        <p>• เป้าหมายในอนาคต : มีใบประกอบวิชาชีพสถาปนิก</p>
+
+    </div>
+
+    <!-- ==========================
+        ใส่ผลงานที่ผ่านมาของคุณในส่วนนี้
+    =========================== -->
+
+    <div class="glass">
+
+        <h2 class="section-title">ผลงานที่ผ่านมา</h2>
+
+        <div class="gallery">
+
+            <div class="project">
+                <img src="project1.jpg">
+                <div class="project-content">
+                    <h3>Project 1</h3>
+                    <p>รายละเอียดผลงาน</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="project2.jpg">
+                <div class="project-content">
+                    <h3>Project 2</h3>
+                    <p>รายละเอียดผลงาน</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="project3.jpg">
+                <div class="project-content">
+                    <h3>Project 3</h3>
+                    <p>รายละเอียดผลงาน</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="project4.jpg">
+                <div class="project-content">
+                    <h3>Project 4</h3>
+                    <p>รายละเอียดผลงาน</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+        CONTACT
+    =========================== -->
+
+    <div class="glass contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p>Instagram : @ch._.oka.nan</p>
+
+        <p>Facebook : Permie AFK</p>
+
+        <p>Email : s34298@banbung.ac.th</p>
+
+        <a href="index.html" class="btn">
+            ⬅ กลับหน้าแรก
+        </a>
+
+    </div>
+
 </div>
 </body>
 </html>
+```
