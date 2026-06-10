@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>My Dream University</title>
+
+<style>
+
+/* =========================================
+                RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================================
+              พื้นหลัง
+========================================= */
+
+body{
+
+    font-family:Arial,sans-serif;
+
+    background-image:url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHYycTNxcGx0aXloZ3d0Z2tvanM3dnRrcmRxN2F1NnV5ODBpMjlqYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTcnT45z6H5gxFYZZS/giphy.gif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:white;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.45);
+
+    z-index:-1;
+}
+
+/* =========================================
+                CARD
+========================================= */
+
+.card{
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 25px rgba(0,195,255,0.25);
+}
+
+/* =========================================
+                TEXT
+========================================= */
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+h2{
+
+    margin-bottom:10px;
+}
+
+p{
+
+    margin:8px 0;
+
+    line-height:1.6;
+}
+
+/* =========================================
+              DROPDOWN
+========================================= */
+
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.15);
+
+    color:white;
+
+    font-size:16px;
+}
+
+option{
+
+    background:#111827;
+
+    color:white;
+}
+
+/* =========================================
+            RESULT BOX
+========================================= */
+
+#result{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+a{
+
+    color:#7dd3fc;
+}
+
+/* =========================================
+            ปุ่มกลับหน้าแรก
+========================================= */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,0.15);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    transition:.3s;
+}
+
+.back-btn:hover{
+
+    background:rgba(0,180,255,0.3);
+
+    transform:translateY(-2px);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- =====================================
+            ปุ่มกลับหน้าแรก
+    ====================================== -->
+
+    <a href="index.html" class="back-btn">
+        ⬅ กลับหน้าหลัก
+    </a>
+
+    <!-- =====================================
+                หัวข้อ
+    ====================================== -->
+
+    <h1>🎓 ดู มหาลัย/คณะ/สาขา ที่ผมสนใจ</h1>
+
+    <!-- =====================================
+            มหาวิทยาลัย
+    ====================================== -->
+
+    <select id="university">
+
+        <option value="">
+            เลือกมหาวิทยาลัย
+        </option>
+
+        <option value="chula">
+            จุฬาลงกรณ์มหาวิทยาลัย
+        </option>
+
+        <option value="kku">
+            มหาวิทยาลัยขอนแก่น
+        </option>
+
+        <option value="su">
+            มหาวิทยาลัยศิลปากร
+        </option>
+
+        <option value="kmitl">
+            สจล. ลาดกระบัง
+        </option>
+
+    </select>
+
+    <!-- =====================================
+                คณะ
+    ====================================== -->
+
+    <select id="faculty">
+
+        <option value="">
+            เลือกคณะ
+        </option>
+
+        <option value="arch">
+            คณะสถาปัตยกรรมศาสตร์
+        </option>
+
+        <option value="eng">
+            คณะวิศวกรรมศาสตร์
+        </option>
+
+    </select>
+
+    <!-- =====================================
+                สาขา
+    ====================================== -->
+
+    <select id="major">
+
+        <option value="">
+            เลือกสาขา
+        </option>
+
+    </select>
+
+    <!-- =====================================
+              กล่องแสดงผล
+    ====================================== -->
+
+    <div id="result">
+
+        <h2>📋 ข้อมูลการรับเข้า</h2>
+
+        <p>เลือกมหาวิทยาลัย คณะ และสาขา</p>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================================
+                ตัวแปร
+========================================= */
+
+const university =
+document.getElementById("university");
+
+const faculty =
+document.getElementById("faculty");
+
+const major =
+document.getElementById("major");
+
+const result =
+document.getElementById("result");
+
+/* =========================================
+          เลือกคณะ -> เติมสาขา
+========================================= */
+
+faculty.addEventListener("change", function(){
+
+    major.innerHTML =
+    '<option value="">เลือกสาขา</option>';
+
+    if(this.value === "arch"){
+
+        major.innerHTML += `
+        <option value="arch_main">
+            สถาปัตยกรรมหลัก
+        </option>
+
+        <option value="landscape">
+            ภูมิสถาปัตยกรรม
+        </option>
+
+        <option value="interior">
+            สถาปัตยกรรมภายใน
+        </option>
+        `;
+    }
+
+    if(this.value === "eng"){
+
+        major.innerHTML += `
+        <option value="civil">
+            วิศวกรรมโยธา
+        </option>
+
+        <option value="com">
+            วิศวกรรมคอมพิวเตอร์
+        </option>
+        `;
+    }
+
+});
+
+/* =========================================
+            ฐานข้อมูล
+========================================= */
+
+const data = {
+
+    chula:{
+
+        arch:`
+        <h2>🏛️ จุฬาลงกรณ์มหาวิทยาลัย</h2>
+
+        <h3>คณะสถาปัตยกรรมศาสตร์</h3>
+
+        <p><b>GPAX ขั้นต่ำ:</b> 2.00</p>
+
+        <p>TPAT4 : 40%</p>
+        <p>TGAT : 20%</p>
+        <p>A-Level คณิตศาสตร์ประยุกต์ 1 : 20%</p>
+        <p>A-Level ฟิสิกส์ : 20%</p>
+
+        <hr>
+
+        <p>หมายเหตุ : สาขาสถาปัตไทย และออกแบบอุตสาหกรรม ใช้เกณฑ์ต่างกัน</p>
+        `,
+
+        eng:`
+        <h2>⚙️ จุฬาลงกรณ์มหาวิทยาลัย</h2>
+
+        <h3>คณะวิศวกรรมศาสตร์</h3>
+
+        <p><b>GPAX ขั้นต่ำ:</b> 2.00</p>
+
+        <p><b>Minimum Score:</b> 51%</p>
+
+        <p>TPAT3 : 40%</p>
+        <p>TGAT : 20%</p>
+        <p>A-Level คณิตศาสตร์ประยุกต์ 1 : 20%</p>
+        <p>A-Level ฟิสิกส์ : 20%</p>
+        `
+    },
+
+    kku:{
+
+        arch:`
+        <h2>🏛️ มหาวิทยาลัยขอนแก่น</h2>
+
+        <h3>คณะสถาปัตยกรรมศาสตร์</h3>
+
+        <p>ไม่กำหนด GPAX ขั้นต่ำ</p>
+
+        <p>TPAT4 : 40%</p>
+        <p>TGAT : 20%</p>
+        <p>คณิตศาสตร์ : 20%</p>
+        <p>ภาษาอังกฤษ : 20%</p>
+        `,
+
+        eng:`
+        <h2>⚙️ มหาวิทยาลัยขอนแก่น</h2>
+
+        <h3>คณะวิศวกรรมศาสตร์</h3>
+
+        <p>ไม่กำหนด GPAX ขั้นต่ำ</p>
+
+        <p>TPAT3 : 35%</p>
+        <p>TGAT : 20%</p>
+        <p>คณิตศาสตร์ประยุกต์ 1 : 20%</p>
+        <p>ฟิสิกส์ : 15%</p>
+        <p>ภาษาอังกฤษ : 10%</p>
+        `
+    },
+
+    su:{
+
+        arch:`
+        <h2>🏛️ มหาวิทยาลัยศิลปากร</h2>
+
+        <h3>คณะสถาปัตยกรรมศาสตร์</h3>
+
+        <p>TPAT4 และ A-Level ต้องไม่เป็น 0</p>
+
+        <p>TPAT4 : 40%</p>
+        <p>TGAT : 20%</p>
+        <p>คณิตศาสตร์ประยุกต์ 1 : 20%</p>
+        <p>ภาษาอังกฤษ : 20%</p>
+        `,
+
+        eng:`
+        <h2>⚙️ มหาวิทยาลัยศิลปากร</h2>
+
+        <h3>วิศวกรรมศาสตร์และเทคโนโลยีอุตสาหกรรม</h3>
+
+        <p>TPAT3 : 30%</p>
+        <p>TGAT : 20%</p>
+        <p>คณิตศาสตร์ประยุกต์ 1 : 20%</p>
+        <p>ฟิสิกส์ : 20%</p>
+        <p>เคมี : 10%</p>
+        `
+    },
+
+    kmitl:{
+
+        arch:`
+        <h2>🏛️ สจล. ลาดกระบัง</h2>
+
+        <h3>คณะสถาปัตยกรรม ศิลปะและการออกแบบ</h3>
+
+        <p>ใช้ระบบ T-Score</p>
+
+        <p>TPAT4 : 40%</p>
+        <p>TGAT : 30%</p>
+        <p>ภาษาอังกฤษ : 30%</p>
+        `,
+
+        eng:`
+        <h2>⚙️ สจล. ลาดกระบัง</h2>
+
+        <h3>คณะวิศวกรรมศาสตร์</h3>
+
+        <p>ใช้ระบบ T-Score</p>
+
+        <p>TPAT3 : 25%</p>
+        <p>TGAT : 25%</p>
+        <p>คณิตศาสตร์ประยุกต์ 1 : 25%</p>
+        <p>ฟิสิกส์ : 25%</p>
+        `
+    }
+
+};
+
+/* =========================================
+        แสดงข้อมูล
+========================================= */
+
+major.addEventListener("change", function(){
+
+    const uni = university.value;
+    const fac = faculty.value;
+
+    result.innerHTML =
+    data[uni]?.[fac] ||
+    `
+    <h2>📋 ข้อมูลการรับเข้า</h2>
+    <p>ยังไม่มีข้อมูล</p>
+    `;
+
+});
+
+</script>
+
+</body>
+
+</html>
