@@ -1,0 +1,184 @@
+<!-- ! Web Site Naja -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+  
+<title> ChokananSangpa </title>
+  
+<style>
+/* ====================================
+  โค้ดปุ่มอ่ะ ที่เอาไว้กดไปหน้า Portfolio.html
+======================================= */
+
+    .btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 14px 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        #00b4ff,
+        #0066ff
+    );
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 0 15px rgba(0,180,255,0.5),
+        0 0 30px rgba(0,180,255,0.2);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(0,180,255,0.8),
+        0 0 50px rgba(0,180,255,0.4);
+}
+
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+    
+/* =============================
+  อันนี้พื้นนหลังมั่ง แบบ gif ทะเลปิ้วๆๆๆ
+================================ */
+
+
+    body {
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaThlMTIyaXp6azl3YmQ0dGcxczNkZWpsaDJpd3B0bDRuNXFkNm1mciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oz8xur099boo4N9aU/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    text-align: center;
+}
+/* ===================
+  อันนี้ทำพื้นหลังมันให้มืดลง
+   ===================*/
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: -1;
+}
+
+/* ==========================
+  Animation ของกล่องโง่ๆกลางจอ
+============================*/
+
+  .card {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 40px;
+
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.25),
+        0 0 40px rgba(0, 195, 255, 0.15);
+
+    animation: float 4s ease-in-out infinite;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 30px rgba(0, 195, 255, 0.5),
+        0 0 60px rgba(0, 195, 255, 0.3);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ===================
+  สีหัวข้อหน้าแรก
+   ===================*/
+
+  h1 { color: #ffffff; }
+  p { font-size: 18px; line-height: 1.6; }
+  
+</style>
+</head>
+<body>
+
+  <div class="card">
+
+    <h1>ยินดีต้อนรับสู่แฟ้มสะสมผลงาน</h1>
+
+    <p>สวัสดีครับ ผมชื่อ <strong>โชคอนันต์ แสงพา (Chokanan Sangpa)</strong></p>
+
+    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Architect</p>
+
+    <p>Website นี้จัดทำสำหรับสะสมผลงาน</p>
+
+    <a href="portfolio.html" class="btn">ไปหน้าถัดไป ⮕</a>
+
+</div>
+<script src="universities.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
