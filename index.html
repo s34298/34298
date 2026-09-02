@@ -1,184 +1,866 @@
-<!-- ! Web Site Naja -->
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-  
-<title> ChokananSangpa </title>
-  
-<style>
-/* ====================================
-  โค้ดปุ่มอ่ะ ที่เอาไว้กดไปหน้า Portfolio.html
-======================================= */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .btn {
-    display: inline-block;
+    <title>Portfolio | โชคอนันต์ แสงพา</title>
 
-    margin-top: 25px;
-    padding: 14px 30px;
+    <link rel="stylesheet" href="./style.css">
 
-    font-size: 18px;
-    font-weight: bold;
-
-    color: white;
-    text-decoration: none;
-
-    background: linear-gradient(
-        135deg,
-        #00b4ff,
-        #0066ff
-    );
-
-    border-radius: 50px;
-
-    box-shadow:
-        0 0 15px rgba(0,180,255,0.5),
-        0 0 30px rgba(0,180,255,0.2);
-
-    transition: all 0.3s ease;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.btn:hover {
-    transform: translateY(-4px) scale(1.05);
-
-    box-shadow:
-        0 0 25px rgba(0,180,255,0.8),
-        0 0 50px rgba(0,180,255,0.4);
-}
-
-.btn::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.6),
-        transparent
-    );
-
-    transition: 0.6s;
-}
-
-.btn:hover::before {
-    left: 150%;
-}
-    
-/* =============================
-  อันนี้พื้นนหลังมั่ง แบบ gif ทะเลปิ้วๆๆๆ
-================================ */
-
-
-    body {
-    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaThlMTIyaXp6azl3YmQ0dGcxczNkZWpsaDJpd3B0bDRuNXFkNm1mciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oz8xur099boo4N9aU/giphy.gif");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: #ffffff;
-    text-align: center;
-}
-/* ===================
-  อันนี้ทำพื้นหลังมันให้มืดลง
-   ===================*/
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-}
-
-/* ==========================
-  Animation ของกล่องโง่ๆกลางจอ
-============================*/
-
-  .card {
-    position: relative;
-    overflow: hidden;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 40px;
-
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-
-    box-shadow:
-        0 0 20px rgba(0, 195, 255, 0.25),
-        0 0 40px rgba(0, 195, 255, 0.15);
-
-    animation: float 4s ease-in-out infinite;
-
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.03);
-    box-shadow:
-        0 0 30px rgba(0, 195, 255, 0.5),
-        0 0 60px rgba(0, 195, 255, 0.3);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-/* ===================
-  สีหัวข้อหน้าแรก
-   ===================*/
-
-  h1 { color: #ffffff; }
-  p { font-size: 18px; line-height: 1.6; }
-  
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+    
+      
+
 <body>
 
-  <div class="card">
 
-    <h1>ยินดีต้อนรับสู่แฟ้มสะสมผลงาน</h1>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-    <p>สวัสดีครับ ผมชื่อ <strong>โชคอนันต์ แสงพา (Chokanan Sangpa)</strong></p>
+    <nav>
 
-    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Architect</p>
+        <div class="logo">
+            Chokanan Sangpa
+        </div>
 
-    <p>Website นี้จัดทำสำหรับสะสมผลงาน</p>
+        <ul>
 
-    <a href="portfolio.html" class="btn">ไปหน้าถัดไป ⮕</a>
+            <li>
+                <a href="#home">
+                    หน้าแรก
+                </a>
+            </li>
 
+            <li>
+                <a href="#about">
+                    เกี่ยวกับฉัน
+                </a>
+            </li>
+
+            <li>
+                <a href="#education">
+                    การศึกษา
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    ผลงาน
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    ความสนใจ
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    ติดต่อ
+                </a>
+            </li>
+
+        </ul>
+
+        <button
+            class="theme-btn"
+            id="themeBtn"
+            onclick="toggleTheme()"
+        >
+            🌙
+        </button>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-container">
+
+
+            <div>
+
+                <div class="hello">
+                    สวัสดีครับ 👋
+                </div>
+
+                <h1>
+
+                    ผมชื่อ
+
+                    <br>
+
+                    <span>
+                        โชคอนันต์ แสงพา
+                    </span>
+
+                </h1>
+
+                <p>
+
+                    นักเรียนระดับมัธยมศึกษาตอนปลาย ชั้นปีที่ 6/3
+                    ผู้ที่สนใจด้านวิศวกรรม เทคโนโลยี 
+                    การออกแบบ และการสร้างสิ่งต่าง ๆ
+                    พร้อมเรียนรู้สิ่งใหม่ ๆ
+                    และพัฒนาตัวเองอยู่เสมอ
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#about"
+                        class="btn btn-main"
+                    >
+                        รู้จักผมมากขึ้น
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="btn btn-outline"
+                    >
+                        ดูผลงาน
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="profile-box">
+
+                <div class="profile">
+
+                    <img
+                        src="Prem.jpg"
+                        alt="รูปโปรไฟล์"
+                    >
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <small>
+                ABOUT ME
+            </small>
+
+            <h2>
+                เกี่ยวกับตัวผม
+            </h2>
+
+        </div>
+
+
+        <div class="about">
+
+
+            <div class="card">
+
+                <h3>
+                    👤 ตัวตนของผม
+                </h3>
+
+                <p>
+
+                    ผมเป็นคนที่ชอบเรียนรู้สิ่งใหม่ ๆ
+                    และสนใจการทำงานที่สามารถนำความรู้
+                    ไปสร้างสิ่งต่าง ๆ ให้เกิดขึ้นจริง
+                    ผมชอบการคิด วิเคราะห์
+                    และทดลองทำสิ่งต่าง ๆ ด้วยตัวเอง
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    💡 สิ่งที่ผมชอบ
+                </h3>
+
+                <p>
+
+                    ผมสนใจเทคโนโลยี การเขียนเว็บไซต์
+                    การออกแบบ รวมถึงงานด้านวิศวกรรม
+                    โดยเฉพาะสิ่งที่เกี่ยวข้องกับการออกแบบ
+                    โครงสร้างและการก่อสร้าง
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <small>
+                EDUCATION
+            </small>
+
+            <h2>
+                มหาวิทยาลัยที่สนใจ
+            </h2>
+
+        </div>
+
+
+        <div class="university">
+
+            <div class="uni-icon">
+                🏛️
+            </div>
+
+            <h3>
+                จุฬาลงกรณ์มหาวิทยาลัย
+            </h3>
+
+            <div class="faculty">
+                คณะวิศวกรรมศาสตร์
+            </div>
+
+            <p>
+                สาขาวิศวกรรมโยธาและคอมพิวเตอร์
+            </p>
+
+            <br>
+
+            <p>
+
+                ผมมีความสนใจที่จะศึกษาต่อด้าน
+                วิศวกรรมโยธา เพราะเป็นศาสตร์ที่นำ
+                ความรู้ด้านคณิตศาสตร์ วิทยาศาสตร์
+                และการออกแบบมาประยุกต์ใช้จริง
+                เพื่อสร้างและพัฒนาโครงสร้างพื้นฐาน
+                ที่มีประโยชน์ต่อสังคม
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <small>
+                MY PROJECTS
+            </small>
+
+            <h2>
+                ผลงานที่เคยทำ
+            </h2>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <!--
+                        ถ้ามีรูปจริง
+                        เปลี่ยนเป็น
+
+                        <img src="project1.jpg">
+                    -->
+
+                    💻
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        เว็บไซต์ Portfolio
+                    </h3>
+
+                    <p>
+
+                        ออกแบบและพัฒนาเว็บไซต์ Portfolio
+                        สำหรับแนะนำตัวเอง รวบรวมข้อมูล
+                        ความสนใจ ผลงาน และเป้าหมาย
+                        ในการศึกษาต่อ
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            Web Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+           <div class="project">
+
+                <div class="project-image">
+    <a href="https://shorturl.asia/ASpoG" target="_blank">
+        <img src="Medic.jpg" alt="ผลงานเว็บไซต์">
+    </a>
 </div>
-<script src="universities.js"></script>
-<script src="app.js"></script>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        Medical Exam System
+                    </h3>
+
+                    <p>
+
+                        ระบบสำหรับบันทึกและตรวจสอบผล
+                        การทดสอบ มีระบบ Login
+                        จัดการข้อมูลผู้สมัคร ค้นหา
+                        สำรองข้อมูล และ Activity Log
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Google Apps Script
+                        </span>
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-image">
+    <a href="https://msep15.netlify.app/" target="_blank">
+        <img src="Msep.jpg" alt="ผลงานเว็บไซต์">
+    </a>
+</div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        ระบบจัดเก็บเอกสารการเรียน
+                    </h3>
+
+                    <p>
+
+                        ออกแบบแนวคิดระบบสำหรับจัดเก็บ
+                        และแชร์เอกสารการเรียน
+                        โดยแบ่งเอกสารเป็นหมวดหมู่
+                        เพื่อให้ค้นหาและใช้งานได้ง่าย
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Web
+                        </span>
+
+                        <span class="tag">
+                            Database
+                        </span>
+
+                        <span class="tag">
+                            UI Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    🎨
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        งานออกแบบสื่อ
+                    </h3>
+
+                    <p>
+
+                        ออกแบบโปสเตอร์และสื่อประชาสัมพันธ์
+                        โดยให้ความสำคัญกับการจัดวาง
+                        ตัวอักษร รูปภาพ และองค์ประกอบ
+                        เพื่อให้สื่อสารข้อมูลได้ชัดเจน
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Graphic Design
+                        </span>
+
+                        <span class="tag">
+                            Poster
+                        </span>
+
+                        <span class="tag">
+                            Creative
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 5 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    🧠
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        สื่อการเรียนรู้
+                    </h3>
+
+                    <p>
+
+                        จัดทำสื่อการเรียนรู้และ Infographic
+                        เพื่อสรุปเนื้อหาที่มีรายละเอียดจำนวนมาก
+                        ให้เข้าใจง่ายและสามารถนำเสนอ
+                        ต่อผู้อื่นได้
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Infographic
+                        </span>
+
+                        <span class="tag">
+                            Presentation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 6 -->
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    🏗️
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        ความสนใจด้านวิศวกรรม
+                    </h3>
+
+                    <p>
+
+                        ศึกษาและเรียนรู้เกี่ยวกับงาน
+                        โครงสร้าง การคำนวณ และหลักการ
+                        เบื้องต้นของวิศวกรรมโยธา
+                        เพื่อเตรียมความพร้อมสำหรับการศึกษา
+                        ในระดับมหาวิทยาลัย
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Civil Engineering
+                        </span>
+
+                        <span class="tag">
+                            Structure
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <small>
+                INTERESTS & SKILLS
+            </small>
+
+            <h2>
+                สิ่งที่ผมสนใจ
+            </h2>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🏗️
+                </div>
+
+                <h3>
+                    วิศวกรรมโยธา
+                </h3>
+
+                <p>
+
+                    สนใจงานโครงสร้าง
+                    การก่อสร้าง
+                    และการออกแบบ
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h3>
+                    เทคโนโลยี
+                </h3>
+
+                <p>
+
+                    สนใจการเขียนเว็บไซต์
+                    การเขียนโปรแกรม
+                    และการสร้างระบบ
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    📐
+                </div>
+
+                <h3>
+                    การออกแบบ
+                </h3>
+
+                <p>
+
+                    ชอบคิด วิเคราะห์
+                    และออกแบบสิ่งต่าง ๆ
+                    ให้ใช้งานได้จริง
+
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GOAL
+    ========================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <small>
+                MY GOAL
+            </small>
+
+            <h2>
+                เป้าหมายของผม
+            </h2>
+
+        </div>
+
+
+        <div class="goal">
+
+            <div class="goal-box">
+
+                <h3>
+                    🎯 ก้าวต่อไปของผม
+                </h3>
+
+                <p>
+
+                    เป้าหมายของผมคือการได้ศึกษาต่อ
+                    ในสาขาวิศวกรรมโยธา เพื่อพัฒนาความรู้
+                    และทักษะของตัวเองให้มากขึ้น
+                    รวมถึงเรียนรู้จากการทำงานจริง
+                    และนำความรู้ที่ได้รับไปสร้างผลงาน
+                    ที่เป็นประโยชน์ต่อผู้อื่นและสังคม
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <small>
+                CONTACT
+            </small>
+
+            <h2>
+                ติดต่อผม
+            </h2>
+
+        </div>
+
+
+        <div class="contact">
+
+            <p>
+
+                หากต้องการติดต่อหรือพูดคุย
+                สามารถติดต่อผมผ่านช่องทางด้านล่าง
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a href="https://www.facebook.com/permie.afk/">
+                    📘 Facebook
+                </a>
+
+                <a href="https://www.instagram.com/ch._.oka.nan/?next=%2F">
+                    📷 Instagram
+                </a>
+
+                <a href="mailto:chokanansangpa@gmail.com">
+                    ✉️ Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Portfolio
+        —
+        โชคอนันต์ แสงพา
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function toggleTheme() {
+
+            document.body.classList.toggle("dark");
+
+            const button =
+                document.getElementById("themeBtn");
+
+            if (
+                document.body.classList.contains("dark")
+            ) {
+
+                button.innerHTML = "☀️";
+
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
+
+            } else {
+
+                button.innerHTML = "🌙";
+
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
+
+            }
+
+        }
+
+
+        /* จำ Theme ที่เลือกไว้ */
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark");
+
+            document.getElementById(
+                "themeBtn"
+            ).innerHTML = "☀️";
+
+        }
+
+    </script>
+
 </body>
 </html>
