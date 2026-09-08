@@ -1546,3 +1546,55 @@ footer {
         animation: none !important;
     }
 }ก
+
+/* UNIVERSITY PAGE */
+.uni-page-hero{min-height:55vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-height) + 55px) var(--side-padding) 70px;background:radial-gradient(circle at 20% 20%,var(--pink-light),transparent 35%),radial-gradient(circle at 80% 70%,var(--pink-light),transparent 35%)}
+.uni-page-hero-inner{max-width:850px;margin:auto}.uni-page-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.15;margin:12px 0 18px}.uni-page-hero h1 span{color:var(--pink)}.uni-page-hero p{color:var(--subtext);font-size:17px;line-height:1.9;max-width:700px;margin:auto}
+.uni-list{width:100%;max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.uni-card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:28px;box-shadow:var(--shadow);transition:.25s}.uni-card:hover{transform:translateY(-7px)}.uni-card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--uni-color,var(--pink))}.uni-logo{width:92px;height:92px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--uni-bg,var(--pink-light));border:2px solid var(--uni-color,var(--pink));color:var(--uni-color,var(--pink));font-family:Poppins,sans-serif;font-weight:700;font-size:25px;text-align:center}.uni-card h3{text-align:center;font-size:23px;margin-bottom:7px}.uni-card .uni-subtitle{text-align:center;color:var(--uni-color,var(--pink));font-weight:500;margin-bottom:15px}.uni-card p{color:var(--subtext);line-height:1.8;font-size:14px}.uni-info{margin-top:18px;display:grid;gap:9px}.uni-info div{padding:10px 12px;border-radius:10px;background:var(--bg);color:var(--text);font-size:14px}.uni-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.uni-actions a{flex:1;min-width:130px;text-align:center;padding:9px 12px;border-radius:9px;text-decoration:none;font-size:13px;border:1px solid var(--uni-color,var(--pink));color:var(--uni-color,var(--pink));transition:.2s}.uni-actions a:hover{background:var(--uni-bg,var(--pink-light))}.uni-actions a.main{color:#fff;background:var(--uni-color,var(--pink))}
+.faculty-page{width:100%;max-width:1050px;margin:auto}.faculty-block{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;margin-bottom:25px;box-shadow:var(--shadow)}.faculty-head{display:flex;gap:20px;align-items:center;margin-bottom:22px}.faculty-badge{width:65px;height:65px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--pink-light);color:var(--pink);font-weight:700;font-family:Poppins,sans-serif}.faculty-head h3{font-size:25px;margin-bottom:4px}.faculty-head p{color:var(--pink)}.faculty-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.faculty-item{padding:20px;border:1px solid var(--border);border-radius:15px;background:var(--bg)}.faculty-item h4{margin-bottom:9px}.faculty-item p,.faculty-item li{color:var(--subtext);line-height:1.8;font-size:14px}.faculty-item ul{padding-left:20px}.criteria-note{margin-top:18px;padding:15px 18px;border-radius:13px;background:var(--pink-light);color:var(--subtext);line-height:1.8;font-size:13px}.source-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.source-links a{text-decoration:none;color:var(--pink);border:1px solid var(--pink);padding:8px 13px;border-radius:9px;font-size:13px}.back-home{margin-top:25px;text-align:center}
+@media(max-width:900px){.uni-list{grid-template-columns:1fr;max-width:650px}.faculty-grid{grid-template-columns:1fr}}@media(max-width:600px){.uni-page-hero{padding-top:100px;min-height:50vh}.uni-page-hero p{font-size:15px}.uni-card,.faculty-block{padding:22px 18px}.faculty-head{align-items:flex-start}.faculty-head h3{font-size:21px}.uni-logo{width:80px;height:80px}}
+
+/* ================================
+   UNIVERSITY LOGO
+================================ */
+
+.uni-logo {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--uni-bg);
+    border: 2px solid var(--uni-color);
+    border-radius: 50%;
+
+    padding: 15px;
+
+    transition: 0.3s ease;
+}
+
+.uni-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.uni-card:hover .uni-logo {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .uni-logo {
+        width: 90px;
+        height: 90px;
+        padding: 12px;
+    }
+
+}
