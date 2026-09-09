@@ -1598,3 +1598,635 @@ footer {
     }
 
 }
+
+/* ========================================
+   ABOUT ME PAGE
+======================================== */
+
+.about-page {
+    width: 100%;
+    min-height: 100vh;
+    padding:
+        calc(var(--nav-height) + 55px)
+        var(--side-padding)
+        80px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            var(--pink-light),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            var(--pink-light),
+            transparent 30%
+        );
+}
+
+/* Header */
+
+.about-hero {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.about-hero small {
+    display: block;
+
+    color: var(--pink);
+
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.about-hero h1 {
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.about-hero h1 span {
+    color: var(--pink);
+}
+
+.about-hero p {
+    max-width: 700px;
+    margin: auto;
+
+    color: var(--subtext);
+
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   ABOUT ME PROFILE
+======================================== */
+
+.about-profile {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        350px
+        minmax(0, 1fr);
+
+    gap: 35px;
+    align-items: stretch;
+}
+
+
+/* Profile Image */
+
+.about-photo {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
+    padding: 15px;
+
+    box-shadow: var(--shadow);
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s ease;
+}
+
+.about-photo:hover {
+    transform:
+        rotate(0deg)
+        translateY(-7px);
+}
+
+.about-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+
+/* ========================================
+   ABOUT INFORMATION
+======================================== */
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.about-info-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-info-card h2 {
+    color: var(--pink);
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.about-info-card p {
+    color: var(--subtext);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    overflow-wrap: break-word;
+}
+
+
+/* ========================================
+   PERSONAL INFORMATION
+======================================== */
+
+.about-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.about-detail {
+    padding: 14px 16px;
+
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.about-detail strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.about-detail span {
+    color: var(--subtext);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   INTERESTS
+======================================== */
+
+.about-interests {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 30px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.interest-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-6px);
+}
+
+.interest-icon {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.interest-card h3 {
+    margin-bottom: 8px;
+}
+
+.interest-card p {
+    color: var(--subtext);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   MY JOURNEY
+======================================== */
+
+.about-journey {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 55px auto 0;
+}
+
+.about-journey-title {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.about-journey-title small {
+    color: var(--pink);
+
+    font-family: Poppins, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.about-journey-title h2 {
+    font-size: 34px;
+
+    margin-top: 5px;
+}
+
+.journey-list {
+    position: relative;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+.journey-item {
+    position: relative;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.journey-item h3 {
+    color: var(--pink);
+
+    margin-bottom: 7px;
+}
+
+.journey-item p {
+    color: var(--subtext);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   ABOUT ME GOAL
+======================================== */
+
+.about-goal {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 35px auto 0;
+}
+
+.about-goal-box {
+    padding: 40px 30px;
+
+    background: var(--pink-light);
+
+    border-radius: 22px;
+
+    text-align: center;
+}
+
+.about-goal-box h2 {
+    color: var(--pink);
+
+    font-size: 26px;
+
+    margin-bottom: 12px;
+}
+
+.about-goal-box p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--subtext);
+
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   ABOUT ME RESPONSIVE
+======================================== */
+
+/* iPad / Large Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .about-profile {
+        grid-template-columns:
+            280px
+            minmax(0, 1fr);
+
+        gap: 25px;
+    }
+
+    .about-photo img {
+        min-height: 360px;
+    }
+
+    .about-info-card {
+        padding: 22px;
+    }
+
+    .about-interests {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+}
+
+
+/* Tablet */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .about-page {
+        padding:
+            100px
+            6%
+            60px;
+    }
+
+    .about-hero {
+        margin-bottom: 40px;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+    }
+
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    .about-profile {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        gap: 30px;
+    }
+
+    .about-photo {
+        width: 270px;
+
+        margin: auto;
+    }
+
+    .about-photo img {
+        min-height: 330px;
+    }
+
+    .about-interests {
+        max-width: 650px;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .about-journey {
+        margin-top: 45px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (min-width: 360px) and (max-width: 480px) {
+
+    .about-page {
+        padding:
+            90px
+            20px
+            50px;
+    }
+
+    .about-hero {
+        margin-bottom: 35px;
+    }
+
+    .about-hero small {
+        font-size: 11px;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .about-profile {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .about-photo {
+        width: 230px;
+
+        margin: auto;
+
+        padding: 10px;
+
+        border-radius: 20px;
+    }
+
+    .about-photo img {
+        min-height: 285px;
+
+        border-radius: 14px;
+    }
+
+    .about-info {
+        gap: 15px;
+    }
+
+    .about-info-card {
+        padding: 20px 18px;
+
+        border-radius: 15px;
+    }
+
+    .about-info-card h2 {
+        font-size: 20px;
+    }
+
+    .about-info-card p {
+        font-size: 14px;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .about-detail {
+        padding: 12px 14px;
+    }
+
+    .about-interests {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 25px;
+    }
+
+    .interest-card {
+        padding: 22px 18px;
+    }
+
+    .about-journey {
+        margin-top: 40px;
+    }
+
+    .about-journey-title h2 {
+        font-size: 27px;
+    }
+
+    .journey-item {
+        padding: 20px 18px;
+    }
+
+    .about-goal-box {
+        padding: 30px 18px;
+    }
+
+    .about-goal-box h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* Very Small Mobile */
+
+@media (max-width: 359px) {
+
+    .about-page {
+        padding:
+            90px
+            15px
+            45px;
+    }
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-hero p {
+        font-size: 13px;
+    }
+
+    .about-photo {
+        width: 210px;
+    }
+
+    .about-photo img {
+        min-height: 260px;
+    }
+
+    .about-info-card {
+        padding: 18px 15px;
+    }
+
+    .about-interests {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* Mobile Landscape */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .about-profile {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        align-items: center;
+    }
+
+    .about-photo {
+        width: 220px;
+    }
+
+    .about-photo img {
+        min-height: 270px;
+    }
+
+}
